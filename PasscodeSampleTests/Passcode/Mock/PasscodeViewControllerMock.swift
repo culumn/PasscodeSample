@@ -26,7 +26,19 @@ final class PasscodeViewControllerMock {
 // MARK: - PasscodePresenterDelegate
 extension PasscodeViewControllerMock: PasscodePresenterDelegate {
 
-    func didAuthenticateBiometrics() {
+    func didTypeNewPasscode() {
+
+    }
+
+    func didTypeCurrentPasscode() {
+
+    }
+
+    func didNotTypeCurrentPasscode() {
+
+    }
+
+    func didNotConfirmNewPasscode() {
 
     }
 
@@ -35,10 +47,6 @@ extension PasscodeViewControllerMock: PasscodePresenterDelegate {
     }
     
     func didNotAuthenticateBiometrics() {
-
-    }
-    
-    func didTypeWrongPasscode(for currentState: LockState) {
 
     }
 
@@ -54,11 +62,6 @@ extension PasscodeViewControllerMock: PasscodePresenterDelegate {
 
     func didGetError(with message: String) {
         didCallGetError = true
-        expectation.fulfill()
-    }
-
-    func didTypePasscode(for currentState: LockState) {
-        didCallTypePasscode = true
         expectation.fulfill()
     }
 }

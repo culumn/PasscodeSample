@@ -33,28 +33,4 @@ final class PasscodeControllerTests: XCTestCase {
 
         XCTAssertTrue(passcodeUseCaseMock.didReferHasPasscode, "Failed to refer hasPasscode")
     }
-
-    func testGetPasscode() {
-        _ = passcodeController.getPasscode()
-
-        XCTAssertTrue(passcodeUseCaseMock.didCallGetPasscode, "Failed to call getPasscode")
-    }
-
-    func testSavePasscode() {
-        passcodeController.save("1234")
-
-        XCTAssertTrue(passcodeUseCaseMock.didCallSavePasscode, "Failed to call savePasscode")
-    }
-
-    func testDeletePasscode() {
-        passcodeController.deletePasscode()
-
-        XCTAssertTrue(passcodeUseCaseMock.didCallDeletePasscode, "Failed to call deletePasscode")
-    }
-
-    func testTypePasscodeForFirstTime() {
-        passcodeController.type("1234", for: .enterFirstTime)
-
-        XCTAssertTrue(passcodeUseCaseMock.didCallTypePasscode, "Failed to call typePasscode")
-    }
 }

@@ -61,12 +61,4 @@ final class PasscodePresenterTests: XCTestCase {
             XCTAssertTrue(self.passcodeVCMock.didCallGetError, "Failed to call didGetError")
         }
     }
-
-    func testDidTypePasscodeForFirstTime() {
-        passcodePresenter.didTypePasscode(for: .enterFirstTime)
-
-        waitForExpectations(timeout: 0.1) { error in
-            XCTAssertTrue(self.passcodeVCMock.didCallTypePasscode, "Failed to call didTypePasscode")
-        }
-    }
 }

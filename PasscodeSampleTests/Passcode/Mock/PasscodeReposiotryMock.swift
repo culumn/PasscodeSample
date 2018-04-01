@@ -37,12 +37,20 @@ extension PasscodeRepositoryMock: PasscodeRepository {
 
     var hasPasscode: Bool {
         didReferHasPasscode = true
-        return try! userDefaultsStorage.getValue(forKey: .passcode) != nil
+        do {
+            return try userDefaultsStorage.getValue(forKey: .passcode) != nil
+        } catch {
+            return false
+        }
     }
 
     func getPasscode() -> String? {
         didCallGetPasscode = true
-        return try! userDefaultsStorage.getValue(forKey: .passcode)
+        do {
+            return try userDefaultsStorage.getValue(forKey: .passcode)
+        } catch {
+            return nil
+        }
     }
 
     func save(_ passcode: String) -> Bool {
