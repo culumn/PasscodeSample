@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3vT-f4-s7d">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="hIX-oh-5r5">
+            <objects>
+                <viewController id="3vT-f4-s7d" customClass="HomeViewController" customModule="PasscodeSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jhe-s4-klZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-I2-UD2" userLabel="Buttons Stack View">
+                                <rect key="frame" x="159" y="239" width="57" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syz-tO-AVp">
+                                        <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapRegisterButton:" destination="3vT-f4-s7d" eventType="touchUpInside" id="kHP-ck-MaE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMI-QT-CDW">
+                                        <rect key="frame" x="0.0" y="60" width="57" height="30"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapLoginButton:" destination="3vT-f4-s7d" eventType="touchUpInside" id="dlv-I6-bje"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsE-xQ-tcS">
+                                        <rect key="frame" x="0.0" y="120" width="57" height="30"/>
+                                        <state key="normal" title="Change">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapChangeButton:" destination="3vT-f4-s7d" eventType="touchUpInside" id="2j3-vc-N2W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAR-y6-wfT">
+                                        <rect key="frame" x="0.0" y="180" width="57" height="30"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapDeleteButton:" destination="3vT-f4-s7d" eventType="touchUpInside" id="siQ-bG-ueY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passcode simulation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdA-7m-CRW">
+                                <rect key="frame" x="16" y="70" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.27450980390000002" green="0.1333333333" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LdA-7m-CRW" firstAttribute="top" secondItem="MYE-JP-KKm" secondAttribute="top" constant="50" id="BjQ-Nd-ruj"/>
+                            <constraint firstItem="ypO-I2-UD2" firstAttribute="centerY" secondItem="MYE-JP-KKm" secondAttribute="centerY" id="P4L-2V-UUe"/>
+                            <constraint firstItem="LdA-7m-CRW" firstAttribute="leading" secondItem="MYE-JP-KKm" secondAttribute="leading" constant="16" id="Ygr-h2-dxr"/>
+                            <constraint firstItem="ypO-I2-UD2" firstAttribute="centerX" secondItem="MYE-JP-KKm" secondAttribute="centerX" id="pIR-F2-gXr"/>
+                            <constraint firstItem="MYE-JP-KKm" firstAttribute="trailing" secondItem="LdA-7m-CRW" secondAttribute="trailing" constant="16" id="x00-39-URx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MYE-JP-KKm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4lA-o2-ENK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="292.80359820089956"/>
+        </scene>
+    </scenes>
+</document>
