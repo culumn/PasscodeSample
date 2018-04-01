@@ -16,9 +16,6 @@ final class PasscodeRepositoryMock {
     private var isSaved: Bool?
     private var isDeleted: Bool?
 
-    var didReferHasPasscode = false
-    var didCallGetPasscode = false
-
     init(userDefaultsStorage: UserDefaultsStorage) {
         self.userDefaultsStorage = userDefaultsStorage
     }
@@ -36,16 +33,10 @@ final class PasscodeRepositoryMock {
 extension PasscodeRepositoryMock: PasscodeRepository {
 
     var hasPasscode: Bool {
-        didReferHasPasscode = true
-        do {
-            return try userDefaultsStorage.getValue(forKey: .passcode) != nil
-        } catch {
-            return false
-        }
+        return getPasscode() != nil
     }
 
     func getPasscode() -> String? {
-        didCallGetPasscode = true
         do {
             return try userDefaultsStorage.getValue(forKey: .passcode)
         } catch {
@@ -64,6 +55,7 @@ extension PasscodeRepositoryMock: PasscodeRepository {
     }
 
     func deletePasscode() -> Bool {
+        guard isDeleted == nil else { return isDeleted! }
         do {
             try userDefaultsStorage.deleteValue(forKey: .passcode)
             return true

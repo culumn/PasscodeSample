@@ -32,15 +32,16 @@ final class UserDefaultsStorageTests: XCTestCase {
     }
 
     func testGetValue() {
-        XCTAssertNil(try! userDefaultsStorage.getValue(forKey: .passcode), "Failed to save value without data")
-
-        // prepare existing string
+        // prepare existing value
         try! userDefaultsStorage.save("TestString", forKey: .passcode)
-
         XCTAssertEqual(try! userDefaultsStorage.getValue(forKey: .passcode), "TestString", "Failed to get value")
+
+        // delete value
+        try! userDefaultsStorage.deleteValue(forKey: .passcode)
+        XCTAssertNil(try! userDefaultsStorage.getValue(forKey: .passcode), "Failed to get value")
     }
 
-    func testRemoveValue() {
+    func testDeleteValue() {
         // prepare existing string
         try! userDefaultsStorage.save("TestString", forKey: .passcode)
 
@@ -49,8 +50,10 @@ final class UserDefaultsStorageTests: XCTestCase {
     }
 
     func testUpdateValue() {
+        // prepare existing string
         try! userDefaultsStorage.save("TestString", forKey: .passcode)
 
-        XCTAssertNotNil(try! userDefaultsStorage.getValue(forKey: .passcode), "Failed to save value")
+        try! userDefaultsStorage.update("NewTestString", forKey: .passcode)
+        XCTAssertEqual(try! userDefaultsStorage.getValue(forKey: .passcode), "NewTestString", "Failed to update value")
     }
 }
