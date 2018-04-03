@@ -13,7 +13,7 @@ final class PasscodeUseCaseImpl {
 
     let passcodeGateway: PasscodeGateway
     var delegate: PasscodeUseCaseDelegate?
-    private var tempPasscode = ""
+    var tempPasscode = ""
 
     init(passcodeGateway: PasscodeGateway) {
         self.passcodeGateway = passcodeGateway
