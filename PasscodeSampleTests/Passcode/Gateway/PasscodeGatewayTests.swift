@@ -38,6 +38,7 @@ final class PasscodeGatewayTests: XCTestCase {
     }
     
     func testHasPasscode() {
+        XCTAssert(passcodeGateway.getPasscode() == nil, "Should clear passcode")
         passcodeGateway.save("1234")
         XCTAssertTrue(passcodeGateway.hasPasscode, "Failed to compute hasPasscode")
 
@@ -54,6 +55,7 @@ final class PasscodeGatewayTests: XCTestCase {
     }
 
     func testSavePasscode() {
+        XCTAssert(passcodeGateway.getPasscode() == nil, "Should clear passcode")
         passcodeGateway.save("1234")
 
         XCTAssertNotNil(passcodeGateway.getPasscode(), "Failed to save passcode")

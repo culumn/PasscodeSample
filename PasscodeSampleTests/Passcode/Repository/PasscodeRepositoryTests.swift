@@ -30,6 +30,7 @@ final class PasscodeRepositoryTests: XCTestCase {
     }
 
     func testHasPasscode() {
+        XCTAssert(passcodeRepository.getPasscode() == nil, "Should clear passcode")
         _ = passcodeRepository.save("1234")
         XCTAssertTrue(passcodeRepository.hasPasscode, "Failed to compute hasPasscode")
 
@@ -47,6 +48,7 @@ final class PasscodeRepositoryTests: XCTestCase {
     }
 
     func testSavePasscode() {
+        XCTAssert(passcodeRepository.getPasscode() == nil, "Should clear passcode")
         let isSaved = passcodeRepository.save("1234")
 
         XCTAssertTrue(isSaved, "Faield to save passcode")

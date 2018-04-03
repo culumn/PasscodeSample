@@ -26,6 +26,7 @@ final class UserDefaultsStorageTests: XCTestCase {
     }
 
     func testSaveValue() {
+        XCTAssert(try! userDefaultsStorage.getValue(forKey: .passcode) == nil, "Should clear value")
         try! userDefaultsStorage.save("TestString", forKey: .passcode)
 
         XCTAssertNotNil(try! userDefaultsStorage.getValue(forKey: .passcode), "Failed to save value")

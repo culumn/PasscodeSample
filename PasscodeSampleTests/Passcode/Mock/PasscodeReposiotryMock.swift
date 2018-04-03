@@ -11,12 +11,12 @@ import Foundation
 
 final class PasscodeRepositoryMock {
 
-    let userDefaultsStorage: UserDefaultsStorage
+    let userDefaultsStorage: KeyValueStorage
 
     private var isSaved: Bool?
     private var isDeleted: Bool?
 
-    init(userDefaultsStorage: UserDefaultsStorage) {
+    init(userDefaultsStorage: KeyValueStorage) {
         self.userDefaultsStorage = userDefaultsStorage
     }
 
