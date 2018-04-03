@@ -22,15 +22,23 @@ final class PasscodePresenterMock {
 // MARK: - PasscodePresenter
 extension PasscodePresenterMock: PasscodeUseCaseDelegate {
 
-    func didAuthenticateBiometrics() {
+    func didTypeNewPasscode() {
 
+    }
+
+    func didTypeCurrentPasscode() {
+
+    }
+
+    func didNotTypeCurrentPasscode() {
+
+    }
+
+    func didNotConfirmNewPasscode() {
+        
     }
 
     func didNotAuthenticateBiometrics(with error: LAError) {
-
-    }
-
-    func didTypeWrongPasscode(for currentState: LockState) {
 
     }
 
@@ -49,9 +57,5 @@ extension PasscodePresenterMock: PasscodeUseCaseDelegate {
         case .delete:
             didCallGetDeleteError = true
         }
-    }
-
-    func didTypePasscode(for currentState: LockState) {
-        didCallTypePasscode = true
     }
 }

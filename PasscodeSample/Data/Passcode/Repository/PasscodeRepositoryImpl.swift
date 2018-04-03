@@ -26,8 +26,7 @@ extension PasscodeRepositoryImpl: PasscodeRepository {
 
     func getPasscode() -> String? {
         do {
-            guard let passcode: String = try userDefaultsStorage.getValue(forKey: .passcode) else { return nil }
-            return passcode
+            return try userDefaultsStorage.getValue(forKey: .passcode)
         } catch {
             return nil
         }

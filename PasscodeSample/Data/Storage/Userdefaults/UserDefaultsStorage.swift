@@ -25,8 +25,7 @@ final class UserDefaultsStorage {
 extension UserDefaultsStorage: KeyValueStorage {
 
     func getValue<T>(forKey: KeyValueStorageKey) throws -> T? {
-        guard let value = userDefaults.value(forKey: forKey.rawValue) else { throw KeyValueStorageError.get }
-        return value as? T
+        return userDefaults.value(forKey: forKey.rawValue) as? T
     }
 
     func update<T>(_ value: T, forKey: KeyValueStorageKey) throws {

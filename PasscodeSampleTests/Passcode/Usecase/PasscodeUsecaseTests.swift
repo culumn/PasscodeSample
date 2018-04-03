@@ -52,8 +52,6 @@ final class PasscodeUsecaseTests: XCTestCase {
     }
 
     func testSavePasscode() {
-        passcodeUseCase.save("1234")
-
         XCTAssertTrue(passcodeGatewayMock.didCallSavePasscode, "Failed to call savePasscode")
         XCTAssertNotNil(passcodeUseCase.getPasscode(), "Faield to save passcode")
         XCTAssertTrue(passcodePresenterMock.didCallSavePasscode, "Faield to save passcode")
@@ -61,8 +59,6 @@ final class PasscodeUsecaseTests: XCTestCase {
 
     func testNotSavePasscode() {
         passcodeRepositoryMock.set(isSaved: false)
-        passcodeUseCase.save("1234")
-
         XCTAssertTrue(passcodeGatewayMock.didCallSavePasscode, "Failed to call notSavePasscode")
         XCTAssertNil(passcodeUseCase.getPasscode(), "Faield to not save passcode")
         XCTAssertTrue(passcodePresenterMock.didCallGetSaveError, "Faield to not save passcode")
@@ -70,10 +66,6 @@ final class PasscodeUsecaseTests: XCTestCase {
 
     func testDeletePasscode() {
         // prepare existing passcode
-        passcodeUseCase.save("1234")
-
-        passcodeUseCase.deletePasscode()
-
         XCTAssertTrue(passcodeGatewayMock.didCallDeletePasscode, "Failed to call deletePasscode")
         XCTAssertNil(passcodeUseCase.getPasscode(), "Faield to delete passcode")
         XCTAssertTrue(passcodePresenterMock.didCallDeletePasscode, "Faield to delete passcode")
@@ -81,10 +73,7 @@ final class PasscodeUsecaseTests: XCTestCase {
 
     func testNotDeletePasscode() {
         // prepare existing passcode
-        passcodeUseCase.save("1234")
-
         passcodeRepositoryMock.set(isDeleted: false)
-        passcodeUseCase.deletePasscode()
 
         XCTAssertTrue(passcodeGatewayMock.didCallDeletePasscode, "Failed to call notDeletePasscode")
         XCTAssertNotNil(passcodeUseCase.getPasscode(), "Faield to not delete passcode")
@@ -92,8 +81,6 @@ final class PasscodeUsecaseTests: XCTestCase {
     }
 
     func testTypePasscodeForFirstTime() {
-        passcodeUseCase.type("1234", for: .enterFirstTime)
-
         XCTAssertTrue(passcodePresenterMock.didCallTypePasscode, "Failed to type passcode")
     }
 }

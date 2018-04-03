@@ -38,28 +38,37 @@ final class PasscodeGatewayTests: XCTestCase {
     }
     
     func testHasPasscode() {
-        _ = passcodeGateway.hasPasscode
-        XCTAssertTrue(passcodeRepositoryMock.didReferHasPasscode, "Failed to refer hasPasscode")
+        XCTAssert(passcodeGateway.getPasscode() == nil, "Should clear passcode")
+        passcodeGateway.save("1234")
+        XCTAssertTrue(passcodeGateway.hasPasscode, "Failed to compute hasPasscode")
+
+        passcodeGateway.deletePasscode()
+        XCTAssertFalse(passcodeGateway.hasPasscode, "Failed to compute hasPasscode")
     }
 
     func testGetPasscode() {
-        _ = passcodeGateway.getPasscode()
-        XCTAssertTrue(passcodeRepositoryMock.didCallGetPasscode, "Faield to call getPasscode")
+        passcodeGateway.save("1234")
+        XCTAssertEqual(passcodeGateway.getPasscode(), "1234","Failed to get passcode")
+
+        passcodeGateway.deletePasscode()
+        XCTAssertNil(passcodeGateway.getPasscode(), "Failed to get passcode")
     }
 
     func testSavePasscode() {
+        XCTAssert(passcodeGateway.getPasscode() == nil, "Should clear passcode")
         passcodeGateway.save("1234")
 
-        XCTAssertNotNil(passcodeGateway.getPasscode(), "Faield to save passcode")
-        XCTAssertTrue(passcodeUseCaseMock.didCallSavePasscode, "Faield to save passcode")
+        XCTAssertNotNil(passcodeGateway.getPasscode(), "Failed to save passcode")
+        XCTAssertEqual(passcodeGateway.getPasscode(), "1234")
+        XCTAssertTrue(passcodeUseCaseMock.didCallSavePasscode, "Failed to save passcode")
     }
 
     func testNotSavePasscode() {
         passcodeRepositoryMock.set(isSaved: false)
         passcodeGateway.save("1234")
 
-        XCTAssertNil(passcodeGateway.getPasscode(), "Faield to not save passcode")
-        XCTAssertTrue(passcodeUseCaseMock.didCallNotSavePasscode, "Faield to not save passcode")
+        XCTAssertNil(passcodeGateway.getPasscode(), "Failed to not save passcode")
+        XCTAssertTrue(passcodeUseCaseMock.didCallNotSavePasscode, "Failed to not save passcode")
     }
 
     func testDeletePasscode() {
@@ -67,9 +76,8 @@ final class PasscodeGatewayTests: XCTestCase {
         passcodeGateway.save("1234")
 
         passcodeGateway.deletePasscode()
-
-        XCTAssertNil(passcodeGateway.getPasscode(), "Faield to delete passcode")
-        XCTAssertTrue(passcodeUseCaseMock.didCallDeletePasscode, "Faield to delete passcode")
+        XCTAssertNil(passcodeGateway.getPasscode(), "Failed to delete passcode")
+        XCTAssertTrue(passcodeUseCaseMock.didCallDeletePasscode, "Failed to delete passcode")
     }
 
     func testNotDeletePasscode() {
@@ -79,7 +87,7 @@ final class PasscodeGatewayTests: XCTestCase {
         passcodeRepositoryMock.set(isDeleted: false)
         passcodeGateway.deletePasscode()
 
-        XCTAssertNotNil(passcodeGateway.getPasscode(), "Faield to not delete passcode")
-        XCTAssertTrue(passcodeUseCaseMock.didCallNotDeletePasscode, "Faield to not delete passcode")
+        XCTAssertNotNil(passcodeGateway.getPasscode(), "Failed to not delete passcode")
+        XCTAssertTrue(passcodeUseCaseMock.didCallNotDeletePasscode, "Failed to not delete passcode")
     }
 }
