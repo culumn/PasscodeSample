@@ -15,8 +15,10 @@ final class PasscodeUseCaseMock {
     var delegate: PasscodeUseCaseDelegate?
 
     var didReferHasPasscode = false
-    var didCallGetPasscode = false
-    var didCallTypePasscode = false
+    var didCallTypeCurrentPasscode = false
+    var didCallTypeNewPasscode = false
+    var didCallConfirmPasscode = false
+    var didCallEvaluateBiometricAuthentication = false
 
     var didCallSavePasscode = false
     var didCallNotSavePasscode = false
@@ -28,20 +30,19 @@ final class PasscodeUseCaseMock {
 extension PasscodeUseCaseMock: PasscodeUseCase {
 
     func type(currentPasscode: String, for lockType: LockType) {
-
+        didCallTypeCurrentPasscode = true
     }
 
     func type(newPasscode: String, for lockType: LockType) {
-
+        didCallTypeNewPasscode = true
     }
 
-    func confirmNewPasscode(using passcode: String, for lockType: LockType) {
-        
+    func confirmPasscode(using passcode: String, for lockType: LockType) {
+        didCallConfirmPasscode = true
     }
-
 
     func evaluateBiometricAuthentication(isSuccess: Bool?, error: LAError?) {
-
+        didCallEvaluateBiometricAuthentication = true
     }
 
     var hasPasscode: Bool {

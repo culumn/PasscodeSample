@@ -16,5 +16,5 @@ protocol PasscodeUseCase: class {
     func evaluateBiometricAuthentication(isSuccess: Bool?, error: LAError?)
     func type(currentPasscode: String, for lockType: LockType)
     func type(newPasscode: String, for lockType: LockType)
-    func confirmNewPasscode(using passcode: String, for lockType: LockType)
+    func confirmPasscode(using typedPasscode: String, for lockType: LockType)
 }

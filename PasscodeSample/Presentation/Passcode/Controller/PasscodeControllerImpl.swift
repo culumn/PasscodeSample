@@ -45,7 +45,7 @@ extension PasscodeControllerImpl: PasscodeController {
 
     func confirmNewPasscode(using passcode: String, for lockType: LockType) {
         precondition(passcode.count == AppConfig.passcodeLength, "Passcode length is not appropriate")
-        passcodeUseCase.confirmNewPasscode(using: passcode, for: lockType)
+        passcodeUseCase.confirmPasscode(using: passcode, for: lockType)
     }
 
     func evaluateBiometricAuthentication(localizedReason: String) {

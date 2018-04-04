@@ -79,49 +79,49 @@ final class PasscodeUsecaseTests: XCTestCase {
         XCTAssertTrue(passcodePresenterMock.didCallNotTypeCurrentPasscode)
     }
 
-    func testConfirmNewPasscodeForRegistration() {
+    func testConfirmPasscodeForRegistration() {
         XCTAssert(!passcodeGatewayMock.didCallSavePasscode, "Failed to reset flag")
         passcodeUseCase.type(newPasscode: "1234", for: .registration)
 
-        passcodeUseCase.confirmNewPasscode(using: "1234", for: .registration)
+        passcodeUseCase.confirmPasscode(using: "1234", for: .registration)
 
         XCTAssertTrue(passcodeGatewayMock.didCallSavePasscode)
     }
 
-    func testConfirmNewPasscodeForChange() {
+    func testConfirPasscodeForChange() {
         XCTAssert(!passcodeGatewayMock.didCallSavePasscode, "Failed to reset flag")
         passcodeUseCase.type(newPasscode: "1234", for: .change)
 
-        passcodeUseCase.confirmNewPasscode(using: "1234", for: .change)
+        passcodeUseCase.confirmPasscode(using: "1234", for: .change)
 
         XCTAssertTrue(passcodeGatewayMock.didCallSavePasscode)
     }
 
-    func testNotConfirmNewPasscode() {
+    func testNotConfirmPasscode() {
         XCTAssert(!passcodePresenterMock.didCallNotConfirmPasscode, "Failed to reset flag")
         passcodeUseCase.type(newPasscode: "1234", for: .registration)
 
-        passcodeUseCase.confirmNewPasscode(using: "5678", for: .registration)
+        passcodeUseCase.confirmPasscode(using: "5678", for: .registration)
 
         XCTAssertTrue(passcodePresenterMock.didCallNotConfirmPasscode)
     }
 
-    func testConfirmNewPasscodeForDelete() {
+    func testConfirmPasscodeForDelete() {
         // prepare existing passcode
         XCTAssert(!passcodeGatewayMock.didCallDeletePasscode, "Failed to reset flag")
         passcodeGatewayMock.save("1234")
 
-        passcodeUseCase.confirmNewPasscode(using: "1234", for: .delete)
+        passcodeUseCase.confirmPasscode(using: "1234", for: .delete)
 
         XCTAssertTrue(passcodeGatewayMock.didCallDeletePasscode)
     }
 
-    func testNotConfirmNewPasscodeForDelete() {
+    func testNotConfirmPasscodeForDelete() {
         // prepare existing passcode
         XCTAssert(!passcodePresenterMock.didCallNotConfirmPasscode, "Failed to reset flag")
         passcodeGatewayMock.save("1234")
 
-        passcodeUseCase.confirmNewPasscode(using: "5678", for: .delete)
+        passcodeUseCase.confirmPasscode(using: "5678", for: .delete)
 
         XCTAssertTrue(passcodePresenterMock.didCallNotConfirmPasscode)
     }
