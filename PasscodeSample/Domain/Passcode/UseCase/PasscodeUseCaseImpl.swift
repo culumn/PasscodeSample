@@ -13,7 +13,7 @@ final class PasscodeUseCaseImpl {
 
     let passcodeGateway: PasscodeGateway
     var delegate: PasscodeUseCaseDelegate?
-    private var tempPasscode = ""
+    var tempPasscode = ""
 
     init(passcodeGateway: PasscodeGateway) {
         self.passcodeGateway = passcodeGateway
@@ -63,7 +63,7 @@ extension PasscodeUseCaseImpl: PasscodeUseCase {
         delegate?.didTypeNewPasscode()
     }
 
-    func confirmNewPasscode(using passcode: String, for lockType: LockType) {
+    func confirmPasscode(using passcode: String, for lockType: LockType) {
         switch lockType {
         case .registration, .change:
             guard tempPasscode == passcode else {

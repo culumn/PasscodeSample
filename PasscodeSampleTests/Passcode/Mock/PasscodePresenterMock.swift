@@ -17,29 +17,34 @@ final class PasscodePresenterMock {
     var didCallGetSaveError = false
     var didCallGetDeleteError = false
     var didCallTypePasscode = false
+    var didCallTypeNewPasscode = false
+    var didCallTypeCurrentPasscode = false
+    var didCallNotTypeCurrentPasscode = false
+    var didCallNotConfirmPasscode = false
+    var didCallNotAuthenticateBiometrics = false
 }
 
 // MARK: - PasscodePresenter
 extension PasscodePresenterMock: PasscodeUseCaseDelegate {
 
     func didTypeNewPasscode() {
-
+        didCallTypeNewPasscode = true
     }
 
     func didTypeCurrentPasscode() {
-
+        didCallTypeCurrentPasscode = true
     }
 
     func didNotTypeCurrentPasscode() {
-
+        didCallNotTypeCurrentPasscode = true
     }
 
     func didNotConfirmNewPasscode() {
-        
+        didCallNotConfirmPasscode = true
     }
 
     func didNotAuthenticateBiometrics(with error: LAError) {
-
+        didCallNotAuthenticateBiometrics = true
     }
 
     func didSavePasscode() {

@@ -56,6 +56,7 @@ final class PasscodeGatewayTests: XCTestCase {
 
     func testSavePasscode() {
         XCTAssert(passcodeGateway.getPasscode() == nil, "Should clear passcode")
+        XCTAssert(!passcodeUseCaseMock.didCallSavePasscode, "Failed to reset flag")
         passcodeGateway.save("1234")
 
         XCTAssertNotNil(passcodeGateway.getPasscode(), "Failed to save passcode")
@@ -64,6 +65,7 @@ final class PasscodeGatewayTests: XCTestCase {
     }
 
     func testNotSavePasscode() {
+        XCTAssert(!passcodeUseCaseMock.didCallNotSavePasscode, "Failed to reset flag")
         passcodeRepositoryMock.set(isSaved: false)
         passcodeGateway.save("1234")
 
@@ -73,6 +75,7 @@ final class PasscodeGatewayTests: XCTestCase {
 
     func testDeletePasscode() {
         // prepare existing passcode
+        XCTAssert(!passcodeUseCaseMock.didCallDeletePasscode, "Failed to reset flag")
         passcodeGateway.save("1234")
 
         passcodeGateway.deletePasscode()
@@ -82,6 +85,7 @@ final class PasscodeGatewayTests: XCTestCase {
 
     func testNotDeletePasscode() {
         // prepare existing passcode
+        XCTAssert(!passcodeUseCaseMock.didCallNotDeletePasscode, "Failed to reset flag")
         passcodeGateway.save("1234")
 
         passcodeRepositoryMock.set(isDeleted: false)
