@@ -8,9 +8,17 @@
 
 import Foundation
 
-struct LockState {
+struct LockState: Equatable {
     var lockType = LockType.registration
     var inputType = PasscodeInputType.new
+}
+
+// MARK: Equatable
+extension LockState {
+
+    static func ==(lhs: LockState, rhs: LockState) -> Bool {
+        return lhs.lockType == rhs.lockType && lhs.inputType == rhs.inputType
+    }
 }
 
 enum LockType {

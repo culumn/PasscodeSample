@@ -15,7 +15,7 @@ struct HomeBuilder: Buildable {
 
     static func build() -> UIViewController {
         let storage = UserDefaultsStorage(domainName: Domain.app.rawValue)
-        let repository = PasscodeRepositoryImpl(userDefaultsStorage: storage)
+        let repository = PasscodeRepositoryImpl(keyValueStorage: storage)
         let gateway = PasscodeGatewayImpl(passcodeRepository: repository)
         let usecase = PasscodeUseCaseImpl(passcodeGateway: gateway)
         let controller = PasscodeControllerImpl(passcodeUseCase: usecase)

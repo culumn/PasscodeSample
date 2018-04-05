@@ -22,15 +22,15 @@ final class PasscodeViewController: UIViewController, UIAlertPresentable {
     var state = LockState()
     var controller: PasscodeController!
 
-    private var passcode: String = ""
-    private var message: String? = "" {
+    var passcode: String = ""
+    var message: String? = "" {
         didSet {
             messageLabel.text = message
             messageLabel.isHidden = message?.isEmpty ?? true
         }
     }
-    private var isAnimatingError = false
-    private var retryCount = 0
+    var isAnimatingError = false
+    var retryCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

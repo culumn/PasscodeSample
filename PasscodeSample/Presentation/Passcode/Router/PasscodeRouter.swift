@@ -13,39 +13,39 @@ final class PasscodeRouter {
 
     private init() {}
 
-    static func register(from sourceVC: UIViewController) {
+    static func register(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
         passcodeVC.state = LockState(lockType: .registration, inputType: .new)
 
-        sourceVC.present(passcodeVC, animated: true, completion: nil)
+        sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func login(from sourceVC: UIViewController) {
+    static func login(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
         passcodeVC.state = LockState(lockType: .login, inputType: .current)
 
-        sourceVC.present(passcodeVC, animated: true, completion: nil)
+        sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func change(from sourceVC: UIViewController) {
+    static func change(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
         passcodeVC.state = LockState(lockType: .change, inputType: .current)
 
-        sourceVC.present(passcodeVC, animated: true, completion: nil)
+        sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func delete(from sourceVC: UIViewController) {
+    static func delete(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
         passcodeVC.state = LockState(lockType: .delete, inputType: .current)
 
-        sourceVC.present(passcodeVC, animated: true, completion: nil)
+        sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 }
