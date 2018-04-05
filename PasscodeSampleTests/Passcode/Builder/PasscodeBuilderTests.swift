@@ -9,7 +9,7 @@
 import XCTest
 @testable import PasscodeSample
 
-class PasscodeBuilderTests: XCTestCase {
+final class PasscodeBuilderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
