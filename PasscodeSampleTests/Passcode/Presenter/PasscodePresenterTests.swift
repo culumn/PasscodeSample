@@ -35,7 +35,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallSavePasscode, "Failed to clear flag")
         passcodePresenter.didSavePasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallSavePasscode)
         }
     }
@@ -44,7 +44,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallGetError, "Failed to clear flag")
         passcodePresenter.didGet(error: .save)
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallGetError)
         }
     }
@@ -53,7 +53,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallDeletePasscode, "Failed to clear flag")
         passcodePresenter.didDeletePasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallDeletePasscode)
         }
     }
@@ -62,7 +62,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallGetError, "Failed to clear flag")
         passcodePresenter.didGet(error: .delete)
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallGetError)
         }
     }
@@ -72,7 +72,7 @@ final class PasscodePresenterTests: XCTestCase {
         let failureError = NSError(domain: LAErrorDomain, code: Int(kLAErrorAuthenticationFailed), userInfo: [:])
         passcodePresenter.didNotAuthenticateBiometrics(with: LAError(_nsError: failureError))
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallNotAuthenticateBiometrics)
         }
     }
@@ -82,7 +82,7 @@ final class PasscodePresenterTests: XCTestCase {
         let cancelError = NSError(domain: LAErrorDomain, code: Int(kLAErrorAppCancel), userInfo: [:])
         passcodePresenter.didNotAuthenticateBiometrics(with: LAError(_nsError: cancelError))
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallCancellAuthenticateBiometrics)
         }
     }
@@ -91,7 +91,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallTypeNewPasscode, "Failed to clear flag")
         passcodePresenter.didTypeNewPasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallTypeNewPasscode)
         }
     }
@@ -100,7 +100,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallTypeCurrentPasscode, "Failed to clear flag")
         passcodePresenter.didTypeCurrentPasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallTypeCurrentPasscode)
         }
     }
@@ -109,7 +109,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallNotTypeCurrentPasscode, "Failed to clear flag")
         passcodePresenter.didNotTypeCurrentPasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallNotTypeCurrentPasscode)
         }
     }
@@ -118,7 +118,7 @@ final class PasscodePresenterTests: XCTestCase {
         XCTAssert(!passcodeVCMock.didCallNotConfirmPasscode, "Failed to clear flag")
         passcodePresenter.didNotConfirmNewPasscode()
 
-        waitForExpectations(timeout: 0.1) { error in
+        waitForExpectations(timeout: 0.2) { error in
             XCTAssertTrue(self.passcodeVCMock.didCallNotConfirmPasscode)
         }
     }
