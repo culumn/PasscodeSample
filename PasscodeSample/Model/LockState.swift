@@ -13,7 +13,7 @@ struct LockState: Equatable {
     var inputType = PasscodeInputType.new
 }
 
-// MARK: Equatable
+// MARK: - Equatable
 extension LockState {
 
     static func ==(lhs: LockState, rhs: LockState) -> Bool {

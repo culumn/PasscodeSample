@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-final class PasscodeRouter {
+final class PasscodeRouterImpl {
+}
 
-    private init() {}
+// MARK: - PasscodeRouter
+extension PasscodeRouterImpl: PasscodeRouter {
 
-    static func register(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
+    func register(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
@@ -22,7 +24,7 @@ final class PasscodeRouter {
         sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func login(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
+    func login(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
@@ -31,7 +33,7 @@ final class PasscodeRouter {
         sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func change(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
+    func change(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }
@@ -40,7 +42,7 @@ final class PasscodeRouter {
         sourceVC.present(passcodeVC, animated: true, completion: presentCompletion)
     }
 
-    static func delete(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
+    func delete(from sourceVC: UIViewController, presentCompletion: (() -> Void)? = nil) {
         guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else {
             preconditionFailure("Failed to generate PasscodeViewController")
         }

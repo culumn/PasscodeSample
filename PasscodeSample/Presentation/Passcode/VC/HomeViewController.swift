@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController, UIAlertPresentable {
+final class HomeViewController: UIViewController, UIAlertPresentable, PasscodeRoutable {
 
     var controller: PasscodeController!
+    var passcodeRouter: PasscodeRouter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,7 @@ final class HomeViewController: UIViewController, UIAlertPresentable {
 
     @objc private func applicationWillEnterForeground(notification: Notification) {
         guard controller.hasPasscode else { return }
-        guard let passcodeVC = PassscodeBuilder.build() as? PasscodeViewController else { return }
-        passcodeVC.state = LockState(lockType: .login, inputType: .current)
-        PasscodeRouter.login(from: self)
+        passcodeRouter.login(from: self, presentCompletion: nil)
     }
 }
 
@@ -36,27 +35,27 @@ extension HomeViewController {
         guard !controller.hasPasscode else { return presentOKAlert(title: "Error",
                                                                    message: "You don't have passcode yet.") }
 
-        PasscodeRouter.register(from: self)
+        passcodeRouter.register(from: self, presentCompletion: nil)
     }
 
     @IBAction func didTapLoginButton(_ sender: UIButton) {
         guard controller.hasPasscode else { return presentOKAlert(title: "Error",
                                                                   message: "You don't have passcode yet.") }
 
-        PasscodeRouter.login(from: self)
+        passcodeRouter.login(from: self, presentCompletion: nil)
     }
 
     @IBAction func didTapChangeButton(_ sender: UIButton) {
         guard controller.hasPasscode else { return presentOKAlert(title: "Error",
                                                                   message: "You don't have passcode yet.") }
 
-        PasscodeRouter.change(from: self)
+        passcodeRouter.change(from: self, presentCompletion: nil)
     }
 
     @IBAction func didTapDeleteButton(_ sender: UIButton) {
         guard controller.hasPasscode else { return presentOKAlert(title: "Error",
                                                                   message: "You don't have passcode yet.") }
 
-        PasscodeRouter.delete(from: self)
+        passcodeRouter.delete(from: self, presentCompletion: nil)
     }
 }

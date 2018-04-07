@@ -19,7 +19,7 @@ final class HomeBuilderTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testBuild() {
         let passcodeVC = HomeBuilder.build() as? HomeViewController
         let passcodeController = passcodeVC?.controller as? PasscodeControllerImpl
         let passcodeUseCase = passcodeController?.passcodeUseCase as? PasscodeUseCaseImpl
@@ -27,6 +27,7 @@ final class HomeBuilderTests: XCTestCase {
         let passcodeGateway = passcodeUseCase?.passcodeGateway as? PasscodeGatewayImpl
         let passcodeRepository = passcodeGateway?.passcodeRepository as? PasscodeRepositoryImpl
         let userdefaultsStorage = passcodeRepository?.keyValueStorage as? UserDefaultsStorage
+        let passcodeRouter = passcodeVC?.passcodeRouter as? PasscodeRouterImpl
 
         XCTAssertNotNil(passcodeVC, "Failed to build home module")
         XCTAssertNotNil(passcodeController, "Failed to build home module")
@@ -35,6 +36,7 @@ final class HomeBuilderTests: XCTestCase {
         XCTAssertNotNil(passcodeGateway, "Failed to build home module")
         XCTAssertNotNil(passcodeRepository, "Failed to build home module")
         XCTAssertNotNil(userdefaultsStorage, "Failed to build home module")
+        XCTAssertNotNil(passcodeRouter, "Failed to build home module")
 
         XCTAssertNil(passcodeGateway?.delegate as? PasscodeUseCaseImpl, "Failed to build home module")
         XCTAssertNil(passcodePresenter?.delegate as? PasscodeViewController, "Failed to build home module")

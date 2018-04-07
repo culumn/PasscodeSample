@@ -26,6 +26,7 @@ struct HomeBuilder: Buildable {
         }
 
         homeVC.controller = controller
+        homeVC.passcodeRouter = PasscodeRouterImpl()
 
         return homeVC
     }

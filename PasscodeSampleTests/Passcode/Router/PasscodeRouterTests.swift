@@ -10,6 +10,8 @@ import XCTest
 @testable import PasscodeSample
 
 final class PasscodeRouterTests: XCTestCase {
+
+    var passcodeRouter = PasscodeRouterImpl()
     
     override func setUp() {
         super.setUp()
@@ -21,7 +23,7 @@ final class PasscodeRouterTests: XCTestCase {
     
     func testRegister() {
         let homeVC = HomeViewController()
-        PasscodeRouter.register(from: homeVC) {
+        passcodeRouter.register(from: homeVC) {
             let passcodeVC = homeVC.presentedViewController as? PasscodeViewController
             XCTAssertNotNil(passcodeVC, "Failed to route registration")
             XCTAssertEqual(passcodeVC!.state, LockState(lockType: .registration, inputType: .new))
@@ -30,7 +32,7 @@ final class PasscodeRouterTests: XCTestCase {
 
     func testLogin() {
         let homeVC = HomeViewController()
-        PasscodeRouter.login(from: homeVC) {
+        passcodeRouter.login(from: homeVC) {
             let passcodeVC = homeVC.presentedViewController as? PasscodeViewController
             XCTAssertNotNil(passcodeVC, "Failed to route registration")
             XCTAssertEqual(passcodeVC!.state, LockState(lockType: .login, inputType: .current))
@@ -39,7 +41,7 @@ final class PasscodeRouterTests: XCTestCase {
 
     func testChange() {
         let homeVC = HomeViewController()
-        PasscodeRouter.change(from: homeVC) {
+        passcodeRouter.change(from: homeVC) {
             let passcodeVC = homeVC.presentedViewController as? PasscodeViewController
             XCTAssertNotNil(passcodeVC, "Failed to route registration")
             XCTAssertEqual(passcodeVC!.state, LockState(lockType: .change, inputType: .current))
@@ -48,7 +50,7 @@ final class PasscodeRouterTests: XCTestCase {
 
     func testDelete() {
         let homeVC = HomeViewController()
-        PasscodeRouter.delete(from: homeVC) {
+        passcodeRouter.delete(from: homeVC) {
             let passcodeVC = homeVC.presentedViewController as? PasscodeViewController
             XCTAssertNotNil(passcodeVC, "Failed to route registration")
             XCTAssertEqual(passcodeVC!.state, LockState(lockType: .delete, inputType: .current))
