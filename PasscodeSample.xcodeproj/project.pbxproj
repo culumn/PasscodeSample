@@ -62,6 +62,7 @@
 		96C9E25D20763CB600487391 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A489AB2066308C00FF920D /* Passcode.storyboard */; };
 		96F54E7B2078A89D00E8C37C /* PasscodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E7A2078A89D00E8C37C /* PasscodeRouter.swift */; };
 		96F54E7D2078A8BD00E8C37C /* PasscodeRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E7C2078A8BD00E8C37C /* PasscodeRoutable.swift */; };
+		96F54E822078AA4B00E8C37C /* UIAlertPresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,7 @@
 		96C9E2572075079500487391 /* PasscodeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouterTests.swift; sourceTree = "<group>"; };
 		96F54E7A2078A89D00E8C37C /* PasscodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouter.swift; sourceTree = "<group>"; };
 		96F54E7C2078A8BD00E8C37C /* PasscodeRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRoutable.swift; sourceTree = "<group>"; };
+		96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertPresentableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 			children = (
 				96A538B02067614B00175063 /* Storage */,
 				96A538AE2067613800175063 /* Passcode */,
+				96F54E832078B78100E8C37C /* Util */,
 				96A489BE2066308C00FF920D /* Info.plist */,
 			);
 			path = PasscodeSampleTests;
@@ -593,6 +596,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		96F54E832078B78100E8C37C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -787,6 +798,7 @@
 				96A538C52067939800175063 /* PasscodeGatewayMock.swift in Sources */,
 				96A538A9206757E100175063 /* PasscodeRepositoryTests.swift in Sources */,
 				96A48A2E2067545100FF920D /* PasscodeControllerTests.swift in Sources */,
+				96F54E822078AA4B00E8C37C /* UIAlertPresentableTests.swift in Sources */,
 				96A538A72067556A00175063 /* UserDefaultsStorageTests.swift in Sources */,
 				96C9E2582075079500487391 /* PasscodeRouterTests.swift in Sources */,
 				96A538B42067617600175063 /* PasscodeUsecaseTests.swift in Sources */,
