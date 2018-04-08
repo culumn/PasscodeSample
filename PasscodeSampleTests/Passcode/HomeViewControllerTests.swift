@@ -24,7 +24,7 @@ final class HomeViewControllerTests: XCTestCase {
         let usecase = PasscodeUseCaseImpl(passcodeGateway: gateway)
         let controller = PasscodeControllerImpl(passcodeUseCase: usecase)
 
-        homeVC = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
+        homeVC = HomeViewController()
         homeVC.controller = controller
         passcodeRouterMock = PasscodeRouterMock()
         homeVC.passcodeRouter = passcodeRouterMock

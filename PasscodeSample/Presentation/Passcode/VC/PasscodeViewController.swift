@@ -44,9 +44,11 @@ extension PasscodeViewController {
 
     @IBAction func didTapNumberButton(_ sender: PasscodeButton) {
         guard !isAnimatingError &&
-            passcode.count <= AppConfig.passcodeLength - 1 else { return }
+            passcode.count <= AppConfig.passcodeLength - 1,
+            let title = sender.title(for: .normal)
+        else { return }
 
-        passcode += (sender.title(for: .normal) ?? "")
+        passcode += title
 
         let index = passcode.count - 1
         placeholders[index].fillColor()
@@ -59,7 +61,6 @@ extension PasscodeViewController {
             controller.type(newPasscode: passcode, for: state.lockType)
         case .confirmation:
             controller.confirmNewPasscode(using: passcode, for: state.lockType)
-
         }
     }
 
@@ -72,7 +73,7 @@ extension PasscodeViewController {
         placeholders[index].fillEmpty()
     }
 
-    @IBAction func biometricAuthenticationButton(_ sender: PasscodeButton) {
+    @IBAction func didTapBiometricAuthenticationButton(_ sender: PasscodeButton) {
         controller.evaluateBiometricAuthentication(localizedReason: "Use authentication for unlock")
     }
 
@@ -113,12 +114,12 @@ extension PasscodeViewController {
 // MARK: - Private function
 extension PasscodeViewController {
 
-    private func configure() {
+    func configure() {
         updateView()
         message = ""
     }
 
-    private func configureBiometricAuthenticationButton() {
+    func configureBiometricAuthenticationButton() {
         biometricAuthenticationButton.visible = controller.availableBiometricAuthentication &&
             state.lockType == .login
 
@@ -132,9 +133,9 @@ extension PasscodeViewController {
         }
     }
 
-    private func updateView(title: String? = nil,
-                            message: String? = nil,
-                            buttonTitle: String? = nil) {
+    func updateView(title: String? = nil,
+                    message: String? = nil,
+                    buttonTitle: String? = nil) {
         switch state.lockType {
         case .registration where state.inputType == .new:
             titleLabel.text = "Enter passcode to register"
@@ -177,13 +178,13 @@ extension PasscodeViewController {
         configureBiometricAuthenticationButton()
     }
 
-    private func fillEmptyPlaceholders() {
+    func fillEmptyPlaceholders() {
         for placeholder in placeholders {
             placeholder.fillEmpty()
         }
     }
 
-    private func animateError() {
+    func animateError() {
         isAnimatingError = true
 
         message = "Error"
@@ -211,19 +212,24 @@ extension PasscodeViewController {
         }
     }
 
-    private func fillPlaceholders() {
+    func fillPlaceholders() {
         for placeholder in placeholders {
             placeholder.fillColor()
         }
     }
 
-    private func countRetry() {
+    func countRetry() {
         guard state.lockType != .registration else { return }
-        guard !(state.inputType == .new && state.inputType == .confirmation) else { return }
-        retryCount += 1
-        guard retryCount >= AppConfig.maxRetryCount else { return }
-        presentOKAlert(title: "Error", message: "You exceeded max retry count") { action in
-            self.dismiss(animated: true)
+
+        switch state.inputType {
+        case .current:
+            retryCount += 1
+            guard retryCount >= AppConfig.maxRetryCount else { return }
+            presentOKAlert(title: "Error", message: "You exceeded max retry count") { action in
+                self.dismiss(animated: true)
+            }
+        default:
+            return
         }
     }
 }
