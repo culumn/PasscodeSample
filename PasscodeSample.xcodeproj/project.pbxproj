@@ -42,7 +42,7 @@
 		96A48A2620668FF100FF920D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A2520668FF100FF920D /* HomeViewController.swift */; };
 		96A48A282066905000FF920D /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A272066905000FF920D /* HomeBuilder.swift */; };
 		96A48A2A2066911B00FF920D /* UIAlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A292066911B00FF920D /* UIAlertPresentable.swift */; };
-		96A48A2C20669B2D00FF920D /* PasscodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A2B20669B2D00FF920D /* PasscodeRouter.swift */; };
+		96A48A2C20669B2D00FF920D /* PasscodeRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A2B20669B2D00FF920D /* PasscodeRouterImpl.swift */; };
 		96A48A2E2067545100FF920D /* PasscodeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A48A2D2067545100FF920D /* PasscodeControllerTests.swift */; };
 		96A538A72067556A00175063 /* UserDefaultsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A538A62067556A00175063 /* UserDefaultsStorageTests.swift */; };
 		96A538A9206757E100175063 /* PasscodeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A538A8206757E100175063 /* PasscodeRepositoryTests.swift */; };
@@ -55,6 +55,18 @@
 		96A538C320678CD200175063 /* PasscodeViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A538C220678CD200175063 /* PasscodeViewControllerMock.swift */; };
 		96A538C52067939800175063 /* PasscodeGatewayMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A538C42067939800175063 /* PasscodeGatewayMock.swift */; };
 		96A538C92067BF4500175063 /* LockState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A538C82067BF4500175063 /* LockState.swift */; };
+		96C9E2532075014F00487391 /* PasscodeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9E2522075014F00487391 /* PasscodeBuilderTests.swift */; };
+		96C9E255207503FB00487391 /* HomeBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9E254207503FB00487391 /* HomeBuilderTests.swift */; };
+		96C9E2582075079500487391 /* PasscodeRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C9E2572075079500487391 /* PasscodeRouterTests.swift */; };
+		96C9E25C20763B6700487391 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A48A2120668DFA00FF920D /* Home.storyboard */; };
+		96C9E25D20763CB600487391 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A489AB2066308C00FF920D /* Passcode.storyboard */; };
+		96F54E7B2078A89D00E8C37C /* PasscodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E7A2078A89D00E8C37C /* PasscodeRouter.swift */; };
+		96F54E7D2078A8BD00E8C37C /* PasscodeRoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E7C2078A8BD00E8C37C /* PasscodeRoutable.swift */; };
+		96F54E822078AA4B00E8C37C /* UIAlertPresentableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */; };
+		96F54E852078B9F200E8C37C /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E842078B9F200E8C37C /* HomeViewControllerTests.swift */; };
+		96F54E872078BE5100E8C37C /* PasscodeRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E862078BE5100E8C37C /* PasscodeRouterMock.swift */; };
+		96F54E892078C24100E8C37C /* PasscodeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E882078C24100E8C37C /* PasscodeViewControllerTests.swift */; };
+		96F54E8B2079E72600E8C37C /* PasscodeControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F54E8A2079E72600E8C37C /* PasscodeControllerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +128,7 @@
 		96A48A2520668FF100FF920D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		96A48A272066905000FF920D /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
 		96A48A292066911B00FF920D /* UIAlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertPresentable.swift; sourceTree = "<group>"; };
-		96A48A2B20669B2D00FF920D /* PasscodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouter.swift; sourceTree = "<group>"; };
+		96A48A2B20669B2D00FF920D /* PasscodeRouterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouterImpl.swift; sourceTree = "<group>"; };
 		96A48A2D2067545100FF920D /* PasscodeControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeControllerTests.swift; sourceTree = "<group>"; };
 		96A538A62067556A00175063 /* UserDefaultsStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageTests.swift; sourceTree = "<group>"; };
 		96A538A8206757E100175063 /* PasscodeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRepositoryTests.swift; sourceTree = "<group>"; };
@@ -129,6 +141,16 @@
 		96A538C220678CD200175063 /* PasscodeViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewControllerMock.swift; sourceTree = "<group>"; };
 		96A538C42067939800175063 /* PasscodeGatewayMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeGatewayMock.swift; sourceTree = "<group>"; };
 		96A538C82067BF4500175063 /* LockState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockState.swift; sourceTree = "<group>"; };
+		96C9E2522075014F00487391 /* PasscodeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeBuilderTests.swift; sourceTree = "<group>"; };
+		96C9E254207503FB00487391 /* HomeBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilderTests.swift; sourceTree = "<group>"; };
+		96C9E2572075079500487391 /* PasscodeRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouterTests.swift; sourceTree = "<group>"; };
+		96F54E7A2078A89D00E8C37C /* PasscodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouter.swift; sourceTree = "<group>"; };
+		96F54E7C2078A8BD00E8C37C /* PasscodeRoutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRoutable.swift; sourceTree = "<group>"; };
+		96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertPresentableTests.swift; sourceTree = "<group>"; };
+		96F54E842078B9F200E8C37C /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		96F54E862078BE5100E8C37C /* PasscodeRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouterMock.swift; sourceTree = "<group>"; };
+		96F54E882078C24100E8C37C /* PasscodeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewControllerTests.swift; sourceTree = "<group>"; };
+		96F54E8A2079E72600E8C37C /* PasscodeControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeControllerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +238,7 @@
 			children = (
 				96A538B02067614B00175063 /* Storage */,
 				96A538AE2067613800175063 /* Passcode */,
+				96F54E832078B78100E8C37C /* Util */,
 				96A489BE2066308C00FF920D /* Info.plist */,
 			);
 			path = PasscodeSampleTests;
@@ -474,7 +497,8 @@
 		96A538AD206760FC00175063 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				96A48A2B20669B2D00FF920D /* PasscodeRouter.swift */,
+				96F54E7E2078A8C800E8C37C /* Protocol */,
+				96A48A2B20669B2D00FF920D /* PasscodeRouterImpl.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -488,6 +512,10 @@
 				96A538B82067619500175063 /* Usecase */,
 				96A538AF2067614200175063 /* Controller */,
 				96A538B72067618E00175063 /* Presenter */,
+				96C9E256207505CD00487391 /* Builder */,
+				96C9E259207639B500487391 /* Router */,
+				96F54E842078B9F200E8C37C /* HomeViewControllerTests.swift */,
+				96F54E882078C24100E8C37C /* PasscodeViewControllerTests.swift */,
 			);
 			path = Passcode;
 			sourceTree = "<group>";
@@ -547,9 +575,45 @@
 				96A538C42067939800175063 /* PasscodeGatewayMock.swift */,
 				96A538B92067637C00175063 /* PasscodeUseCaseMock.swift */,
 				96A538BE2067877400175063 /* PasscodePresenterMock.swift */,
+				96F54E8A2079E72600E8C37C /* PasscodeControllerMock.swift */,
 				96A538C220678CD200175063 /* PasscodeViewControllerMock.swift */,
+				96F54E862078BE5100E8C37C /* PasscodeRouterMock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		96C9E256207505CD00487391 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				96C9E2522075014F00487391 /* PasscodeBuilderTests.swift */,
+				96C9E254207503FB00487391 /* HomeBuilderTests.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		96C9E259207639B500487391 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				96C9E2572075079500487391 /* PasscodeRouterTests.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		96F54E7E2078A8C800E8C37C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				96F54E7A2078A89D00E8C37C /* PasscodeRouter.swift */,
+				96F54E7C2078A8BD00E8C37C /* PasscodeRoutable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		96F54E832078B78100E8C37C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				96F54E812078AA4B00E8C37C /* UIAlertPresentableTests.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -675,6 +739,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96C9E25D20763CB600487391 /* Passcode.storyboard in Resources */,
+				96C9E25C20763B6700487391 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +771,7 @@
 				96A48A2A2066911B00FF920D /* UIAlertPresentable.swift in Sources */,
 				96A489F62066831C00FF920D /* PasscodeControllerImpl.swift in Sources */,
 				96A48A17206684EB00FF920D /* AppConfig.swift in Sources */,
+				96F54E7B2078A89D00E8C37C /* PasscodeRouter.swift in Sources */,
 				96A48A05206683E600FF920D /* PasscodeGatewayDelegate.swift in Sources */,
 				96A48A1F2066867900FF920D /* Buildable.swift in Sources */,
 				96A48A07206683F900FF920D /* PasscodeGatewayImpl.swift in Sources */,
@@ -716,8 +783,9 @@
 				96A489E62066729100FF920D /* PasscodeRepository.swift in Sources */,
 				96A489E2206671BC00FF920D /* PasscodePresenter.swift in Sources */,
 				96A489E02066713700FF920D /* PasscodeUseCase.swift in Sources */,
+				96F54E7D2078A8BD00E8C37C /* PasscodeRoutable.swift in Sources */,
 				96A489FA2066834900FF920D /* PasscodeUseCaseDelegate.swift in Sources */,
-				96A48A2C20669B2D00FF920D /* PasscodeRouter.swift in Sources */,
+				96A48A2C20669B2D00FF920D /* PasscodeRouterImpl.swift in Sources */,
 				96A489DA2066483300FF920D /* PasscodePlaceholderView.swift in Sources */,
 				96A489DE206670EC00FF920D /* PasscodeController.swift in Sources */,
 				96A489FE2066837900FF920D /* PasscodeError.swift in Sources */,
@@ -734,13 +802,21 @@
 				96A538C320678CD200175063 /* PasscodeViewControllerMock.swift in Sources */,
 				96A538B62067618700175063 /* PasscodePresenterTests.swift in Sources */,
 				96A538BA2067637C00175063 /* PasscodeUseCaseMock.swift in Sources */,
+				96F54E852078B9F200E8C37C /* HomeViewControllerTests.swift in Sources */,
 				96A538AB20675EE100175063 /* PasscodeGatewayTests.swift in Sources */,
 				96A538BF2067877400175063 /* PasscodePresenterMock.swift in Sources */,
+				96F54E892078C24100E8C37C /* PasscodeViewControllerTests.swift in Sources */,
+				96C9E255207503FB00487391 /* HomeBuilderTests.swift in Sources */,
+				96C9E2532075014F00487391 /* PasscodeBuilderTests.swift in Sources */,
 				96A538BC206780FE00175063 /* PasscodeReposiotryMock.swift in Sources */,
 				96A538C52067939800175063 /* PasscodeGatewayMock.swift in Sources */,
 				96A538A9206757E100175063 /* PasscodeRepositoryTests.swift in Sources */,
+				96F54E872078BE5100E8C37C /* PasscodeRouterMock.swift in Sources */,
 				96A48A2E2067545100FF920D /* PasscodeControllerTests.swift in Sources */,
+				96F54E822078AA4B00E8C37C /* UIAlertPresentableTests.swift in Sources */,
 				96A538A72067556A00175063 /* UserDefaultsStorageTests.swift in Sources */,
+				96F54E8B2079E72600E8C37C /* PasscodeControllerMock.swift in Sources */,
+				96C9E2582075079500487391 /* PasscodeRouterTests.swift in Sources */,
 				96A538B42067617600175063 /* PasscodeUsecaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,7 @@ final class PasscodeRepositoryTests: XCTestCase {
         super.setUp()
 
         userDefaultsStorage = UserDefaultsStorage(domainName: Domain.test.rawValue)
-        passcodeRepository = PasscodeRepositoryImpl(userDefaultsStorage: userDefaultsStorage)
+        passcodeRepository = PasscodeRepositoryImpl(keyValueStorage: userDefaultsStorage)
     }
     
     override func tearDown() {

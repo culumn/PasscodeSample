@@ -13,6 +13,12 @@ final class PasscodeViewControllerMock {
 
     let expectation: XCTestExpectation
 
+    var didCallTypeNewPasscode = false
+    var didCallTypeCurrentPasscode = false
+    var didCallNotTypeCurrentPasscode = false
+    var didCallNotConfirmPasscode = false
+    var didCallCancellAuthenticateBiometrics = false
+    var didCallNotAuthenticateBiometrics = false
     var didCallSavePasscode = false
     var didCallDeletePasscode = false
     var didCallGetError = false
@@ -27,27 +33,33 @@ final class PasscodeViewControllerMock {
 extension PasscodeViewControllerMock: PasscodePresenterDelegate {
 
     func didTypeNewPasscode() {
-
+        didCallTypeNewPasscode = true
+        expectation.fulfill()
     }
 
     func didTypeCurrentPasscode() {
-
+        didCallTypeCurrentPasscode = true
+        expectation.fulfill()
     }
 
     func didNotTypeCurrentPasscode() {
-
+        didCallNotTypeCurrentPasscode = true
+        expectation.fulfill()
     }
 
     func didNotConfirmNewPasscode() {
-
+        didCallNotConfirmPasscode = true
+        expectation.fulfill()
     }
 
     func didCancellAuthenticateBiometrics() {
-
+        didCallCancellAuthenticateBiometrics = true
+        expectation.fulfill()
     }
     
     func didNotAuthenticateBiometrics() {
-
+        didCallNotAuthenticateBiometrics = true
+        expectation.fulfill()
     }
 
     func didSavePasscode() {

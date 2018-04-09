@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -15,23 +12,23 @@
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="BYZ-38-t0r" customClass="PasscodeViewController" customModule="PasscodeSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="db4-BN-Ef4" userLabel="Header Stack View">
-                                <rect key="frame" x="16" y="61.999999999999993" width="343" height="75.333333333333314"/>
+                                <rect key="frame" x="16" y="38" width="568" height="58.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WLp-Zx-RwS" userLabel="Label Stack View">
-                                        <rect key="frame" x="142.66666666666666" y="0.0" width="58" height="45.333333333333336"/>
+                                        <rect key="frame" x="255" y="0.0" width="58" height="28.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zyJ-Gc-RbE">
-                                                <rect key="frame" x="11.666666666666686" y="0.0" width="34.333333333333336" height="20.333333333333332"/>
+                                                <rect key="frame" x="12" y="0.0" width="34.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yKF-Do-N0M">
-                                                <rect key="frame" x="0.0" y="28.333333333333329" width="58" height="17"/>
+                                                <rect key="frame" x="0.0" y="28.5" width="58" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -39,7 +36,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8TR-84-atV" userLabel="Placeholder Stack View">
-                                        <rect key="frame" x="126.66666666666666" y="60.333333333333329" width="90" height="15"/>
+                                        <rect key="frame" x="239" y="43.5" width="90" height="15"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaV-bW-1nl" customClass="PasscodePlaceholderView" customModule="PasscodeSample" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
@@ -148,13 +145,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UY3-x5-J7W" userLabel="Buttons Stack View">
-                                <rect key="frame" x="30" y="218.33333333333334" width="315" height="425.66666666666663"/>
+                                <rect key="frame" x="30" y="121.5" width="540" height="417"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-zf-Wp9" userLabel="First Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="91.666666666666671"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="S9k-zf-Wp9" userLabel="First Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="0.0"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od6-9u-dL2" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od6-9u-dL2" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="0.0"/>
                                                 <color key="backgroundColor" red="0.71186050562356928" green="0.71890862944162437" blue="0.71890862944162437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="od6-9u-dL2" secondAttribute="height" multiplier="1:1" id="2Hs-ab-ojw"/>
@@ -181,8 +178,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mkg-PZ-g7I"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mw7-v2-waa" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="91.666666666666657" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mw7-v2-waa" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="186.5" y="0.0" width="167" height="0.0"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="2">
@@ -206,8 +203,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6xO-dk-dKN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-fd-db7" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="223.33333333333334" y="0.0" width="91.666666666666657" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nT2-fd-db7" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="373.5" y="0.0" width="166.5" height="0.0"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="3">
@@ -233,11 +230,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MwV-rz-CP8" userLabel="Second Stack View">
-                                        <rect key="frame" x="0.0" y="111.66666666666666" width="315" height="91"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MwV-rz-CP8" userLabel="Second Stack View">
+                                        <rect key="frame" x="0.0" y="20" width="540" height="166"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-sc-uKe" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpx-sc-uKe" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="166"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Dpx-sc-uKe" secondAttribute="height" multiplier="1:1" id="NsC-Gg-YvZ"/>
@@ -264,8 +261,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="29h-ss-6w5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfP-uz-lqN" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="91.666666666666657" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfP-uz-lqN" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="186.5" y="0.0" width="167" height="166"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="5">
@@ -289,8 +286,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a5d-ds-0a8"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzN-Ow-34V" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="223.33333333333334" y="0.0" width="91.666666666666657" height="91"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzN-Ow-34V" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="373.5" y="0.0" width="166.5" height="166"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="6">
@@ -316,11 +313,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-Qr-ylv" userLabel="Third Stack View">
-                                        <rect key="frame" x="0.0" y="222.66666666666666" width="315" height="91.333333333333343"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sQo-Qr-ylv" userLabel="Third Stack View">
+                                        <rect key="frame" x="0.0" y="206" width="540" height="166.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3b-uh-xKN" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="91.333333333333329"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3b-uh-xKN" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="166.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="o3b-uh-xKN" secondAttribute="height" multiplier="1:1" id="mK5-iE-Q3T"/>
@@ -347,8 +344,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9lg-Ld-6Cl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sf-Qd-gFL" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="91.666666666666657" height="91.333333333333329"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sf-Qd-gFL" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="186.5" y="0.0" width="167" height="166.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="8">
@@ -372,8 +369,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V3H-uX-f0n"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eld-el-aGs" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="223.33333333333334" y="0.0" width="91.666666666666657" height="91.333333333333329"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eld-el-aGs" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="373.5" y="0.0" width="166.5" height="166.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="9">
@@ -399,11 +396,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TZj-El-Dvl" userLabel="Fourth Stack View">
-                                        <rect key="frame" x="0.0" y="334" width="315" height="91.666666666666686"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TZj-El-Dvl" userLabel="Fourth Stack View">
+                                        <rect key="frame" x="0.0" y="392.5" width="540" height="24.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWC-4q-Fxe" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.666666666666671" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWC-4q-Fxe" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="24.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="SWC-4q-Fxe" secondAttribute="height" multiplier="1:1" id="GMo-Nz-ppV"/>
@@ -429,11 +426,11 @@
                                                     <userDefinedRuntimeAttribute type="image" keyPath="image" value="TouchID"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="biometricAuthenticationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqh-0Q-yUi"/>
+                                                    <action selector="didTapBiometricAuthenticationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqh-0Q-yUi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-VW-o1G" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="111.66666666666666" y="0.0" width="91.666666666666657" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-VW-o1G" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="186.5" y="0.0" width="167" height="24.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="0">
@@ -457,8 +454,8 @@
                                                     <action selector="didTapNumberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYj-MF-aw5"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-R7-dp4" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
-                                                <rect key="frame" x="223.33333333333334" y="0.0" width="91.666666666666657" height="91.666666666666671"/>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsh-R7-dp4" customClass="PasscodeButton" customModule="PasscodeSample" customModuleProvider="target">
+                                                <rect key="frame" x="373.5" y="0.0" width="166.5" height="24.5"/>
                                                 <color key="backgroundColor" red="0.71186050560000003" green="0.7189086294" blue="0.7189086294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <state key="normal" title="Delete">
@@ -487,7 +484,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcB-L5-eBM" customClass="UnderlineTextButton" customModule="PasscodeSample" customModuleProvider="target">
-                                <rect key="frame" x="16" y="726" width="343" height="32"/>
+                                <rect key="frame" x="16" y="548" width="568" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Button title">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

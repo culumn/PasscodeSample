@@ -10,10 +10,10 @@ import Foundation
 
 final class PasscodeRepositoryImpl {
 
-    let userDefaultsStorage: UserDefaultsStorage
+    let keyValueStorage: KeyValueStorage
 
-    init(userDefaultsStorage: UserDefaultsStorage) {
-        self.userDefaultsStorage = userDefaultsStorage
+    init(keyValueStorage: KeyValueStorage) {
+        self.keyValueStorage = keyValueStorage
     }
 }
 
@@ -26,7 +26,7 @@ extension PasscodeRepositoryImpl: PasscodeRepository {
 
     func getPasscode() -> String? {
         do {
-            return try userDefaultsStorage.getValue(forKey: .passcode)
+            return try keyValueStorage.getValue(forKey: .passcode)
         } catch {
             return nil
         }
@@ -34,7 +34,7 @@ extension PasscodeRepositoryImpl: PasscodeRepository {
 
     func save(_ passcode: String) -> Bool {
         do {
-            try userDefaultsStorage.save(passcode, forKey: .passcode)
+            try keyValueStorage.save(passcode, forKey: .passcode)
             return true
         } catch {
             return false
@@ -43,7 +43,7 @@ extension PasscodeRepositoryImpl: PasscodeRepository {
 
     func deletePasscode() -> Bool {
         do {
-            try userDefaultsStorage.deleteValue(forKey: .passcode)
+            try keyValueStorage.deleteValue(forKey: .passcode)
             return true
         } catch {
             return false
