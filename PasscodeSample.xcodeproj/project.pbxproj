@@ -15,9 +15,6 @@
 		96A489AF2066308C00FF920D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96A489AE2066308C00FF920D /* Assets.xcassets */; };
 		96A489B22066308C00FF920D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96A489B02066308C00FF920D /* LaunchScreen.storyboard */; };
 		96A489C82066308C00FF920D /* PasscodeSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489C72066308C00FF920D /* PasscodeSampleUITests.swift */; };
-		96A489D82066321300FF920D /* PasscodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489D72066321300FF920D /* PasscodeButton.swift */; };
-		96A489DA2066483300FF920D /* PasscodePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489D92066483300FF920D /* PasscodePlaceholderView.swift */; };
-		96A489DC206663F100FF920D /* UnderlineTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489DB206663F100FF920D /* UnderlineTextButton.swift */; };
 		96A489DE206670EC00FF920D /* PasscodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489DD206670EC00FF920D /* PasscodeController.swift */; };
 		96A489E02066713700FF920D /* PasscodeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489DF2066713700FF920D /* PasscodeUseCase.swift */; };
 		96A489E2206671BC00FF920D /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A489E1206671BC00FF920D /* PasscodePresenter.swift */; };
@@ -101,9 +98,6 @@
 		96A489C32066308C00FF920D /* PasscodeSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasscodeSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A489C72066308C00FF920D /* PasscodeSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeSampleUITests.swift; sourceTree = "<group>"; };
 		96A489C92066308C00FF920D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		96A489D72066321300FF920D /* PasscodeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeButton.swift; sourceTree = "<group>"; };
-		96A489D92066483300FF920D /* PasscodePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePlaceholderView.swift; sourceTree = "<group>"; };
-		96A489DB206663F100FF920D /* UnderlineTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextButton.swift; sourceTree = "<group>"; };
 		96A489DD206670EC00FF920D /* PasscodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeController.swift; sourceTree = "<group>"; };
 		96A489DF2066713700FF920D /* PasscodeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeUseCase.swift; sourceTree = "<group>"; };
 		96A489E1206671BC00FF920D /* PasscodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePresenter.swift; sourceTree = "<group>"; };
@@ -220,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				96A489A72066308C00FF920D /* AppDelegate.swift */,
-				96A489E92066827F00FF920D /* CustomView */,
 				96A489EC2066829900FF920D /* Presentation */,
 				9696F848206BECC00021CE36 /* Model */,
 				96A489ED206682A700FF920D /* Domain */,
@@ -251,32 +244,6 @@
 				96A489C92066308C00FF920D /* Info.plist */,
 			);
 			path = PasscodeSampleUITests;
-			sourceTree = "<group>";
-		};
-		96A489E92066827F00FF920D /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				96A489EB2066829000FF920D /* View */,
-				96A489EA2066828A00FF920D /* Button */,
-			);
-			path = CustomView;
-			sourceTree = "<group>";
-		};
-		96A489EA2066828A00FF920D /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				96A489DB206663F100FF920D /* UnderlineTextButton.swift */,
-				96A489D72066321300FF920D /* PasscodeButton.swift */,
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
-		96A489EB2066829000FF920D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				96A489D92066483300FF920D /* PasscodePlaceholderView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		96A489EC2066829900FF920D /* Presentation */ = {
@@ -758,7 +725,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96A489D82066321300FF920D /* PasscodeButton.swift in Sources */,
 				96A538C92067BF4500175063 /* LockState.swift in Sources */,
 				96A489FC2066835A00FF920D /* PasscodeUseCaseImpl.swift in Sources */,
 				96A489AA2066308C00FF920D /* PasscodeViewController.swift in Sources */,
@@ -767,7 +733,6 @@
 				96A48A0D2066844D00FF920D /* UserDefaultsStorage.swift in Sources */,
 				96A48A1D2066860000FF920D /* PasscodeBuilder.swift in Sources */,
 				96A489F0206682CE00FF920D /* PasscodePresenterDelegate.swift in Sources */,
-				96A489DC206663F100FF920D /* UnderlineTextButton.swift in Sources */,
 				96A48A2A2066911B00FF920D /* UIAlertPresentable.swift in Sources */,
 				96A489F62066831C00FF920D /* PasscodeControllerImpl.swift in Sources */,
 				96A48A17206684EB00FF920D /* AppConfig.swift in Sources */,
@@ -786,7 +751,6 @@
 				96F54E7D2078A8BD00E8C37C /* PasscodeRoutable.swift in Sources */,
 				96A489FA2066834900FF920D /* PasscodeUseCaseDelegate.swift in Sources */,
 				96A48A2C20669B2D00FF920D /* PasscodeRouterImpl.swift in Sources */,
-				96A489DA2066483300FF920D /* PasscodePlaceholderView.swift in Sources */,
 				96A489DE206670EC00FF920D /* PasscodeController.swift in Sources */,
 				96A489FE2066837900FF920D /* PasscodeError.swift in Sources */,
 				96A48A282066905000FF920D /* HomeBuilder.swift in Sources */,
@@ -912,7 +876,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -963,7 +927,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

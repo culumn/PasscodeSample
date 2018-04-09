@@ -8,50 +8,50 @@
 
 import UIKit
 
-@IBDesignable final class PasscodeButton: UIButton {
+@IBDesignable final public class PasscodeButton: UIButton {
 
-    @IBInspectable var borderColor: UIColor? {
+    @IBInspectable open var borderColor: UIColor? {
         didSet {
             layer.borderColor = borderColor?.cgColor
         }
     }
 
-    @IBInspectable var borderWidth: CGFloat = 0.0 {
+    @IBInspectable open var borderWidth: CGFloat = 0.0 {
         didSet {
             layer.borderWidth = borderWidth
         }
     }
 
-    @IBInspectable var color: UIColor? {
+    @IBInspectable open var color: UIColor? {
         didSet {
             backgroundColor = color
         }
     }
 
-    @IBInspectable var image: UIImage? {
+    @IBInspectable open var image: UIImage? {
         didSet {
             setImage(image, for: .normal)
             imageView?.contentMode = .scaleAspectFit
         }
     }
 
-    @IBInspectable var visible: Bool = true {
+    @IBInspectable open var visible: Bool = true {
         didSet {
             alpha = visible ? 1.0 : 0.0
             isEnabled = visible
         }
     }
 
-    @IBInspectable var pressedColor: UIColor?
+    @IBInspectable open var pressedColor: UIColor?
 
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         super.draw(rect)
 
         layer.masksToBounds = true
         layer.cornerRadius = min(rect.width, rect.height) / 2
     }
 
-    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+    override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         guard let _ = color,
             let pressedColor = pressedColor else { return super.beginTracking(touch, with: event) }
         UIView.animate(withDuration: 0.3) {
@@ -61,7 +61,7 @@ import UIKit
         return super.beginTracking(touch, with: event)
     }
 
-    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+    override public func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard let color = color,
             let _ = pressedColor else { return super.endTracking(touch, with: event) }
         UIView.animate(withDuration: 0.3) {

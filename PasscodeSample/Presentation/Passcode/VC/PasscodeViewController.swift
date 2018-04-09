@@ -8,6 +8,7 @@
 
 import UIKit
 import AudioToolbox
+import PasscodeSampleUIKit
 
 final class PasscodeViewController: UIViewController, UIAlertPresentable {
 
@@ -139,28 +140,28 @@ extension PasscodeViewController {
         switch state.lockType {
         case .registration where state.inputType == .new:
             titleLabel.text = "Enter passcode to register"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .registration where state.inputType == .confirmation:
             titleLabel.text = "Enter passcode again"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .login:
             titleLabel.text = "Enter current passcode to login"
-            bottomButton.title = "Forget passcode"
+            bottomButton.underlineText = "Forget passcode"
         case .change where state.inputType == .current:
             titleLabel.text = "Enter current passcode to change"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .change where state.inputType == .new:
             titleLabel.text = "Enter new passcode"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .change where state.inputType == .confirmation:
             titleLabel.text = "Enter new passcode again"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .delete where state.inputType == .current:
             titleLabel.text = "Enter current passcode to delete"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         case .delete where state.inputType == .confirmation:
             titleLabel.text = "Enter current passcode again"
-            bottomButton.title = "Cancel"
+            bottomButton.underlineText = "Cancel"
         default:
             break
         }
@@ -172,7 +173,7 @@ extension PasscodeViewController {
             self.message = message
         }
         if let buttonTitle = buttonTitle {
-            bottomButton.title = buttonTitle
+            bottomButton.underlineText = buttonTitle
         }
 
         configureBiometricAuthenticationButton()
