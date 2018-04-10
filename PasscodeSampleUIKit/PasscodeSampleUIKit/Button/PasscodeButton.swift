@@ -16,7 +16,7 @@ import UIKit
         }
     }
 
-    @IBInspectable open var borderWidth: CGFloat = 0.0 {
+    @IBInspectable open var borderWidth = CGFloat(0.0) {
         didSet {
             layer.borderWidth = borderWidth
         }
@@ -35,7 +35,7 @@ import UIKit
         }
     }
 
-    @IBInspectable open var visible: Bool = true {
+    @IBInspectable open var visible = true {
         didSet {
             alpha = visible ? 1.0 : 0.0
             isEnabled = visible
@@ -54,20 +54,29 @@ import UIKit
     override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         guard let _ = color,
             let pressedColor = pressedColor else { return super.beginTracking(touch, with: event) }
-        UIView.animate(withDuration: 0.3) {
-            self.backgroundColor = pressedColor
-        }
 
+        animateBackgroundColor(to: pressedColor)
         return super.beginTracking(touch, with: event)
     }
 
     override public func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard let color = color,
             let _ = pressedColor else { return super.endTracking(touch, with: event) }
-        UIView.animate(withDuration: 0.3) {
-            self.backgroundColor = color
-        }
 
+        animateBackgroundColor(to: color)
         return super.endTracking(touch, with: event)
+    }
+}
+
+// MARK: - Helper
+extension PasscodeButton {
+
+    func animateBackgroundColor(to newColor: UIColor?,
+                                withDuration: TimeInterval = 0.3,
+                                completion: ((Bool) -> Void)? = nil) {
+        UIView.animate(withDuration: withDuration,
+                       animations: {
+            self.backgroundColor = newColor
+        }, completion: completion)
     }
 }
